@@ -16,9 +16,11 @@ Ratings, favourites, colour labels, keywords, descriptions and categories give m
 
 ### A proper photo viewer
 
-![A photograph open in PicDB's viewer](images/02-viewer.png)
+![PicDB's Folder thumbnails layout keeps a strip of smaller images below the main photograph](images/11-folder-thumbnails.png)
 
 The viewer has fit-to-window and actual-size viewing, zoom, previous/next navigation, favourites and face labels. I've also paid attention to how large images are loaded, so browsing doesn't mean holding every original fully decoded in memory.
+
+The **Folder thumbnails** layout keeps smaller previews along the bottom while the selected photo stays large. I can jump between pictures without closing the viewer or returning to the grid. There's also a **Same person** layout for browsing related photos through a named person.
 
 ### Videos belong in the same library
 
@@ -39,6 +41,24 @@ Visual and Text Search lets me describe what I'm looking for instead of remember
 Here, searching for **birds** returns the bird video alongside the bird photographs. The result labels show whether the match came from video frames or an image. I can also use a photo or video as a reference to find similar content.
 
 The visual index and text recognition run locally, and the saved index can be reused. Video search uses sampled frames. These are relevance rankings to help me explore the collection, rather than confidence percentages.
+
+## Small AI models, running locally
+
+I've brought a few focused AI models into PicDB for different jobs:
+
+- **CLIP ViT-B/32** connects visual content with words for visual search and similarity matching.
+- **YuNet and SFace** handle face detection and recognition for the People workflow.
+- **Qwen3.5:4b**, running through local Ollama, generates descriptions of photos and sampled video frames.
+
+The face and visual-search models are bundled with the application. Description generation uses the vision model I run separately through Ollama on the same Mac. The description connection is restricted to local addresses, so the images aren't sent to a cloud description service.
+
+### Generating descriptions
+
+![PicDB showing a description generated and saved by the local Qwen3.5:4b model](images/12-ai-description.png)
+
+I can generate a description for one item, a selection or a folder, then review and edit the saved text. PicDB records which model generated it, and the description becomes another way to find that photo or video later.
+
+The example above was generated locally from the puffin photograph using **qwen3.5:4b**. The description is stored in the catalogue; it doesn't alter the original image.
 
 ## People
 
