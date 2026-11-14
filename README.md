@@ -2,7 +2,7 @@
 
 **My photo and video catalogue for macOS.**
 
-I built PicDB to browse, organise and search my photos and videos in one place, while keeping control of the files and the work happening in the background.
+I built PicDB to browse, organise and search my family photos (over 60k photos and 10k videos) in one place, while keeping control of the files and the work happening in the background.
 
 This page is a look at what I've created. **PicDB is for my own use and isn't available to download.** This repository contains screenshots and documentation only.
 
@@ -95,7 +95,7 @@ Catalogue backups are validated snapshots of the catalogue data. They're separat
 
 ## How I've built it
 
-I've used AI as a development tool throughout the project. I've also spent time deciding how I want the application to behave, working through edge cases and refining the way the features fit together. The background controls, recovery workflows and care around original files are a big part of that.
+I've used AI as a development tool throughout the project but I've also spent a lot of time deciding how I want the application to behave, working through edge cases and refining the way the features fit together. The background controls, recovery workflows and care around original files are a big part of that.
 
 PicDB is built with Swift, SwiftUI and AppKit, with SQLite through GRDB for the catalogue. It uses Apple's media and imaging frameworks, Apple Vision, and ONNX Runtime for local face and visual-search models.
 
